@@ -1,2 +1,7 @@
 import type { Principal } from '@dfinity/principal';
-export interface _SERVICE { 'greet' : (arg_0: string) => Promise<string> }
+export interface Note { 'title' : string, 'content' : string }
+export interface _SERVICE {
+  'creatNeote' : (arg_0: string, arg_1: string) => Promise<undefined>,
+  'deleteNote' : (arg_0: bigint) => Promise<undefined>,
+  'getNotes' : () => Promise<Array<Note>>,
+}
